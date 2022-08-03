@@ -1,0 +1,56 @@
+---
+title: "Module 2 ioslides"
+author: "Martin Conyon"
+date: "2022-08-03"
+output:
+  ioslides_presentation: default
+  beamer_presentation: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## R Markdown
+
+This is an R Markdown presentation. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
+
+## Slide with Bullets
+
+- Bullet 1
+- Bullet 2
+- Bullet 3
+
+## Slide with R Output
+
+```{r cars, echo = TRUE}
+summary(cars)
+```
+
+## Slide with Plot
+
+```{r pressure}
+plot(pressure)
+```
+
+## Slides with Math
+
+$$
+Y=\beta_1 + \beta_2X
+$$
+Some more math! 
+
+$$
+=\sigma^{2} \frac{\sum_{i=1}^{n}\left(z_{i}-\bar{z}\right)^{2}}{s_{z x}^{2}}
+$$
+
+## A Slide with 2 Columns {.columns-2}
+
+![](sunstar.png)
+
+- Does NOT work with Beamer.... (boo)
+- bullet 1
+- bullet 2
+- bullet 3
