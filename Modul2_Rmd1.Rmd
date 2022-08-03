@@ -126,3 +126,44 @@ plot(pressure)
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+```{r pressure2, fig.height=5, fig.width=5}
+plot(pressure)
+```
+
+## Insert Tables
+
+```{r}
+knitr::kable(head(cars))
+```
+## Quick regression
+
+```{r}
+require(stats); require(graphics)
+plot(cars, xlab = "Speed (mph)", ylab = "Stopping distance (ft)",
+     las = 1)
+lines(lowess(cars$speed, cars$dist, f = 2/3, iter = 3), col = "red")
+title(main = "cars data")
+plot(cars, xlab = "Speed (mph)", ylab = "Stopping distance (ft)",
+     las = 1, log = "xy")
+title(main = "cars data (logarithmic scales)")
+lines(lowess(cars$speed, cars$dist, f = 2/3, iter = 3), col = "red")
+summary(fm1 <- lm(log(dist) ~ log(speed), data = cars))
+opar <- par(mfrow = c(2, 2), oma = c(0, 0, 1.1, 0),
+            mar = c(4.1, 4.1, 2.1, 1.1))
+plot(fm1)
+par(opar)
+```
+
+## Back to Tables
+
+```{r}
+knitr::kable(head(cars), caption = "Top Six Rows of Data Set")
+```
+
+## Insert Equation
+
+$$
+Y=\beta_0 + \beta_1X
+$$
+
